@@ -909,7 +909,7 @@ function sortPrice(a , b){
          narr = product.sort(function(a , b){
               return a.salePrice - b.salePrice
         })
-    }else if(value = "low"){
+    }else if(value = "high"){
          narr = product.sort(function(a , b){
               return b.salePrice - a.salePrice
          })
@@ -936,13 +936,11 @@ function searchData(){
      showData(narr)
    }
 }
-
-
 searchBar.addEventListener("input" , searchData)
 
 ///------ Add cart-------
 
-var cartArr = []
+var cartArr = JSON.parse(localStorage.getItem("cart"))||[]
 
 function addToCart(ele){
     console.log(ele);
@@ -955,13 +953,10 @@ function addToCart(ele){
 // ---filter data----
 
 let selectCategory = document.querySelector("#category")
-
 let catArr = JSON.parse(localStorage.getItem("catArr")) || []
-//   catArr.push[narr]
-//   localStorage.setItem("catArr" , JSON.stringify(catArr))
+
 function categoryData(event){
     let value = event.target.value
-    console.log(value)
     if(value == "Category"){
         return showData(product)
     }
@@ -973,8 +968,10 @@ function categoryData(event){
     }
 }
 
-
 selectCategory.addEventListener("change" , event => categoryData(event))
+
+
+
 
 
 

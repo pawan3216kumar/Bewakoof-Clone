@@ -13,6 +13,7 @@ function handleSubmit(e){
       let narr = data.filter(function(ele , i){
          return ele.name === name;
       })
+        
         if(narr.length>0){
             alert("username is already taken")
         }else{
@@ -28,7 +29,7 @@ function handleSubmit(e){
             saveData()
             console.log(data)
             alert("Registration Successfully")
-            // window.location.href= "index.html"
+            window.location.href= "index.html"
         }
 }
 
@@ -65,9 +66,8 @@ let narr = data.filter(function(ele , i){
 })
 
 if(narr.length>0){
-    // localStorage.setItem("loggedstatus" , {status : true , email: narr[0].email})
     alert("logged in successfully")
-    // window.location.href = "";  on home page
+    window.location.href = "product.html"; 
 }else{
     alert("Incorrect email and password")
 }

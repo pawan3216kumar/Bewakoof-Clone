@@ -2,7 +2,7 @@ var cartArr = JSON.parse(localStorage.getItem("cart")) || [];
   displaydata(cartArr)
   console.log(cartArr)
 
-
+ 
   function displaydata(product) {
     var container = document.getElementById("container");
    
